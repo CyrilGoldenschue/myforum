@@ -17,6 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
+        'id',
         'pseudo',
         'first_name',
         'last_name',
@@ -51,4 +52,7 @@ class User extends Authenticatable
         return $this->hasMany(Opinion::class);
     }
 
+    public function role(){
+        return $this->belongsTo('App\Models\Role');
+    }
 }
