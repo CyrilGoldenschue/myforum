@@ -30,6 +30,7 @@
         <li class="nav-item"><a href="{{ route('roles.index') }}" class="btn">Gestion des rôles</a></li>
         <li class="nav-item"><a href="{{ route('states.index') }}" class="btn">Gestion des états</a></li>
         <li class="nav-item"><a href="{{ route('themes.index') }}" class="btn">Modération</a></li>
+        <li class="nav-item"><a href="{{ route('users.index') }}" class="btn">Gestion</a></li>
     </ul>
 </nav>
 @if ($message = Session::get('message'))
