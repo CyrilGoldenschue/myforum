@@ -25,5 +25,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UserOpinionTableSeeder::class);
         $this->call(OpinionReferenceTableSeeder::class);
         $this->call(OpinionstatetransitionsTableSeeder::class);
+        $this->call(RolesHasUsersTableSeeder::class);
     }
 }
