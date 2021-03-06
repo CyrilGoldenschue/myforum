@@ -83,15 +83,14 @@ class UserController extends Controller
      */
     public function destroy($idUser, $idRole)
     {
-        print_r("hello");
+
         $user = RoleUser::where(['user_id', '=', $idUser], ['role_id', '=', $idRole]);
         $controlUser = RoleUser::where('user_id', '=', $idUser)->count();
-
-        if($controlUser >= 1) {
+        if($controlUser > 0) {
             $user->delete();
-            return redirect(route('users.show', $idUser))->with('message', 'Référence supprimée');
-        }else{
-            return redirect(route('users.index', $idUser))->with('message', 'Le role n\' a pas pu être enlevé');
         }
+
+        return view('users.index');
+
     }
 }

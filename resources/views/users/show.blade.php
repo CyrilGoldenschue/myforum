@@ -9,7 +9,7 @@
 
                 @foreach($userInfos as $role)
                     @if($user->user->id == $role->user->id)
-                        <div class="border border-dark p-2">{{ $role->role->name }} <a {{ route('users.destroy', $user->user->id, $role->role->id) }} class="btn-red float-right">supprimer</a> </div>
+                        <div class="border border-dark p-2">{{ $role->role->name }} <a href="{{ route('users.destroy', $user->user->id, $role->role->id) }}" class="btn-red float-right">supprimer</a> </div>
                     @endif
                 @endforeach
 
