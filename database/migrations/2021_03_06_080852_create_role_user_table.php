@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRolesHasUsersTable extends Migration
+class CreateRoleUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateRolesHasUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('roles_has_users', function (Blueprint $table) {
+        Schema::create('role_user', function (Blueprint $table) {
             $table->id();
-            $table->integer('roles_id')->index('fk_roles_has_users_roles1_idx');
-            $table->integer('users_id')->index('fk_roles_has_users_users1_idx');
+            $table->integer('role_id')->index('fk_role_user_roles1_idx');
+            $table->integer('user_id')->index('fk_role_user_users1_idx');
             $table->timestamps();
         });
     }
