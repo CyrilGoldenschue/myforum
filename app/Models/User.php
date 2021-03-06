@@ -21,8 +21,7 @@ class User extends Authenticatable
         'first_name',
         'last_name',
         'email',
-        'password',
-        'role_id'
+        'password'
     ];
 
     /**
@@ -49,6 +48,11 @@ class User extends Authenticatable
     public function opinions()
     {
         return $this->hasMany(Opinion::class);
+    }
+
+    public function getRole_User()
+    {
+        return $this->hasMany('App\Models\RoleUser', 'user_id');
     }
 
 }

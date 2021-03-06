@@ -7,8 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Role extends Model
 {
-    use HasFactory;
-
     public $timestamps = false;
+
+    protected $fillable = ['name'];
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function getRole_User()
+    {
+        return $this->hasMany('App\Models\RoleUser', 'role_id');
+    }
+
 
 }
